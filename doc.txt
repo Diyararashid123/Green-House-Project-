@@ -4,14 +4,14 @@
 
 ### system_sam3x.h 
 
-## This is all we have used, and we have made all the connections according to lab 2 and 3 wiring diagrams on Blackboard. 
+## This is all I have used, and I have made all the connections according to  wiring diagrams that are inside the Hardware folder. 
 
-## Next, we have programmed the keypad in such a way that it will be equal to -1, meaning if we do not press the keypad the program understands it and does not go any further and it will wait for a signal to reset, for example when you press the keypad, then when you have pressed a number that is more than -1 it will print out that number on the screen. 
-
-# ![1adads](https://user-images.githubusercontent.com/126256806/221696770-ecb0f8a5-a8ed-4fd2-a94e-436cf92f907b.JPG)
+## Next, I have programmed the keypad in such a way that it will be equal to -1 if I dosn't press the keypad the program understands it and does not go any further and it will wait for a signal to reset, for example when you press the keypad, then when you have pressed a number that is more than -1 it will print out that number on the screen. 
+## Here i have a blok diagram that will explain the wiring on the bread board: 
+### ![1adads](https://user-images.githubusercontent.com/126256806/221696770-ecb0f8a5-a8ed-4fd2-a94e-436cf92f907b.JPG)
 
 ## Sofware part 
-### The software library's we used are: 
+### The software library's I used are: 
 
 ### <string.h> (To use strings) 
 
@@ -19,4 +19,16 @@
 
  ### <time.h>(Useful when working with time) 
 
-## We have a limit where the difference between the two light sensors values is big enough to make it necessary to move the servo. We have decided through testing that the value is +- 0.1 which gives us a stable but responsive functionality.  
+## I have a limit where the difference between the two light sensors values is big enough to make it necessary to move the servo. I have decided through testing that the value is +- 0.1 which gives us a stable but responsive functionality.  
+
+## First and foremost, I have decided to print out the prompt "pick a valid date", but in order to be able to print this out I created an array that contains all the letters and signs (dashes, underscores, etc.) that are found in the Font table inside the Hardware file. Furthermore, I printed out the date and the time on the first page in the form of YYYY/MM/DD for the date as well as form HH:MM: SS for the time.
+
+## Afterward I recorded the temprature for 7 days in a row, where time stamps were used. Furthermore, I also have “temp_Measurement” which calculates the temperature considering that this function will help us keep track of the temperature calculation for every minute that goes by. After that, a function is needed that is supposed to read the temperature every minute, where it has been decided to make use of the “Read_Temp” function. After everything that has been executed and done so far, LinkedList has been used in order to store the collected data. 
+
+## Lateon i needed to put a limit for the maximum and minimum and the first step is that inside the function “Green_Project” I wrote the methods for max, min, and avg.
+
+## Then I had to make sure that the plants get 16 hours of daylight and 8 hours of darkness during a whole day. What F did is that I put the light sensors on the servo and it points to where the sun is. However, I have also coded the function in such a way that if I  start in the middle of the day, it will take it as though all the hours before the measurement were darkness. I have programmed the servo in a way that makes it turn by 5 degrees at a time. The maximum degree for the servo is 180 degrees and the minimum is 0 degrees.
+
+## I created a function that is called “SET_LIMITS” which is going to limit the allowed temperature and if it is over or under our variables, tmin and tmax the alarm will be triggered, and text will show up on the screen.
+
+## fterward, I made a "fast mode" that runs at a faster rate, approximately 30min/sec. When I toggle fastmode on the regular clock will increase in speed to 1 min/sec. When I do the measurement from the tempsensor I use that value for the next 30 minutes and add it to our linked list 30 times instead of 1. Each time I add a new value I increase the minute value by 1. After this, the minute value has increased by 30 and I  are ready to measure the light again. This happens every real-world second and that is how I built our fastmode to approximately 30 min/sec.  
