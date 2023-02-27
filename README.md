@@ -8,11 +8,11 @@
 ### We have used all those wiring diagrams we have already done in labs 2 and 3. Therefore, we have changed how the functions should work and how we should use them to work as we want. We used the following system components for this project: 
 ### Microchip (Atmel) SAM3X8E – ARM embedded computer platform (Arduino due)  
 
- ####Keypad (Port I/O)  
+ #### Keypad (Port I/O)  
 
- ####Photosensor (A/D)  
+ #### Photosensor (A/D)  
 
- ####Temperature sensor (time)  
+ #### Temperature sensor (time)  
 
 #### RC servo motor (PWM)  
 
